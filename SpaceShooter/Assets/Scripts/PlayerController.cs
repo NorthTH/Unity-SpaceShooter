@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 	void FixedUpdate()
 	{
 		//for PC Version
-		/*float moveHorizontal = Input.GetAxis ("Horizontal");
+		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
@@ -61,10 +61,10 @@ public class PlayerController : MonoBehaviour
 		);
 
 		rb.rotation = Quaternion.Euler (0.0f, 0.0f, rb.velocity.x * -tilt);
-*/
+
 		//for Mobile Version
 		//If a touch is detected
-		foreach (Touch touch in Input.touches) {
+		/*foreach (Touch touch in Input.touches) {
 			if (touch.phase == TouchPhase.Began) {
 				touchBeginPos = Input.GetTouch (0).position;
 			}
@@ -99,5 +99,6 @@ public class PlayerController : MonoBehaviour
 			dragYPos = 0;
 		else
 			dragYPos -= (dragYPos) / slowForce;
+			*/
 	}
 }

@@ -32,3 +32,20 @@
 /Users/North/Desktop/Space Shooter 2/Space Shooter/Temp/bin/Debug/Mono.Cecil.Mdb.dll
 /Users/North/Desktop/Space Shooter 2/Space Shooter/Temp/bin/Debug/Assembly-CSharp.dll.mdb
 /Users/North/Desktop/Space Shooter 2/Space Shooter/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/obj/Debug/Assembly-CSharp.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/UnityEngine.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/UnityEditor.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Mono.Cecil.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Unity.DataContract.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/North/GitHub/Unity-SpaceShooter/Unity-SpaceShooter/SpaceShooter/Temp/bin/Debug/Assembly-CSharp.dll

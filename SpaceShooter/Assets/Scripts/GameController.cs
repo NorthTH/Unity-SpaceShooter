@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 	public GameObject[] hazards;
 	public Vector3 spawnValues;
 	public int hazardCount;
@@ -10,42 +11,45 @@ public class GameController : MonoBehaviour {
 	public float startWait;
 	public float waveWait;
 
-	public GUIText scoreText;
-	public GUIText restartText;
-	public GUIText gameOverText;
+	public Text scoreText;
+	//	public GUIText restartText;
+	public Text gameOverText;
+	public GameObject restartButton;
 
 	private bool gameOver;
 	private bool restart;
 	private int score;
 
-	void Start()
+	void Start ()
 	{
 		gameOver = false;
 		restart = false;
-		restartText.text = "";
+		//		restartText.text = "";
 		gameOverText.text = "";
+		restartButton.SetActive (false);
 		score = 0;
 		UpdateScore ();
-		StartCoroutine (SpawnWaves());
+		StartCoroutine (SpawnWaves ());
 	}
 
-	void Update()
-	{
-		if (restart) 
-		{
-			//if (Input.GetKeyDown (KeyCode.R)) 
-			if (Input.GetTouch (0).phase == TouchPhase.Began) {
-				//Application.LoadLevel (Application.loadedLevel);
-				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);    
-			}
-		}
-	}
+	//	void Update ()
+	//	{
+	//		if (restart)
+	//		{
+	//			if (Input.GetKeyDown (KeyCode.R))
+	//			{
+	//				Application.LoadLevel (Application.loadedLevel);
+	//			}
+	//		}
+	//	}
 
-	IEnumerator SpawnWaves()
+	IEnumerator SpawnWaves ()
 	{
 		yield return new WaitForSeconds (startWait);
-		while (true) {
-			for (int i = 0; i < hazardCount; i++) {
+		while (true)
+		{
+			for (int i = 0; i < hazardCount; i++)
+			{
 				GameObject hazard = hazards [Random.Range (0, hazards.Length)];
 				Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 				Quaternion spawnRotation = Quaternion.identity;
@@ -54,10 +58,10 @@ public class GameController : MonoBehaviour {
 			}
 			yield return new WaitForSeconds (waveWait);
 
-			if (gameOver) 
+			if (gameOver)
 			{
-				//restartText.text = "Press 'R' for Restart";
-				restartText.text = "Touch Screen for Restart";
+				restartButton.SetActive (true);
+				//				restartText.text = "Press 'R' for Restart";
 				restart = true;
 				break;
 			}
@@ -70,14 +74,19 @@ public class GameController : MonoBehaviour {
 		UpdateScore ();
 	}
 
-	void UpdateScore()
+	void UpdateScore ()
 	{
 		scoreText.text = "Score: " + score;
 	}
 
-	public void GameOver()
+	public void GameOver ()
 	{
-		gameOverText.text = "GameOver";
+		gameOverText.text = "Game Over!";
 		gameOver = true;
+	}
+
+	public void RestartGame()
+	{
+		Application.LoadLevel (Application.loadedLevel);
 	}
 }
