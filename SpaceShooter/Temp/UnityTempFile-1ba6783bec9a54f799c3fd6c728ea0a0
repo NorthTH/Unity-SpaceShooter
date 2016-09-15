@@ -117,6 +117,7 @@
 'Assets/Scripts/PlayerController.cs'
 'Assets/Scripts/QuitOnClick.cs'
 'Assets/Scripts/RandomRotator.cs'
+'Assets/Scripts/SelectOnInput.cs'
 'Assets/Scripts/SimpleTouchAreaButton.cs'
 'Assets/Scripts/SimpleTouchPad.cs'
 'Assets/Scripts/TouchScript.cs'

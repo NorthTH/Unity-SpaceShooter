@@ -16,8 +16,8 @@ public class Done_PlayerController : MonoBehaviour
 	public GameObject shot;
 	public Transform shotSpawn;
 	public float fireRate;
-	public SimpleTouchPad touchPad;
-	public SimpleTouchAreaButton areaButton;
+	private SimpleTouchPad touchPad;
+	private SimpleTouchAreaButton areaButton;
 	 
 	private float nextFire;
 	private Quaternion calibrationQuaternion;
@@ -25,6 +25,8 @@ public class Done_PlayerController : MonoBehaviour
 	void Start()
 	{
 		CalibrateAccelleromter ();
+		touchPad = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().touchPad;
+		areaButton = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().areaButton;
 	}
 	
 	void Update ()

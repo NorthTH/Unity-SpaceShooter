@@ -108,7 +108,7 @@
 -define:MOBILE_INPUT
 -define:ENABLE_IOS_ON_DEMAND_RESOURCES
 -define:ENABLE_IOS_APP_SLICING
-'Assets/TEMp/Scripts/Editor/AlphaNumericSort.cs'
-'Assets/TEMp/Scripts/Editor/GUIHierarchy.cs'
+'Assets/Scripts/Editor/AlphaNumericSort.cs'
+'Assets/Scripts/Editor/GUIHierarchy.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Xml.Linq.dll'

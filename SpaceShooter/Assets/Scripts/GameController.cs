@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameController : MonoBehaviour
 {
+	public Transform playerShip;
+	public int playerLives;
+	public GameObject player;
+
 	public GameObject[] hazards;
 	public Vector3 spawnValues;
 	public int hazardCount;
@@ -14,16 +19,25 @@ public class GameController : MonoBehaviour
 	public Text scoreText;
 	//	public GUIText restartText;
 	public Text gameOverText;
+	public Text livesText;
 	public GameObject restartButton;
 
+	public SimpleTouchPad touchPad;
+	public SimpleTouchAreaButton areaButton; 
+
 	private bool gameOver;
-	private bool restart;
+	private bool die;
+	//private bool restart;
 	private int score;
+	private GameObject playerClone;
 
 	void Start ()
 	{
+		playerClone = Instantiate (player, playerShip.position, Quaternion.identity) as GameObject;
+
 		gameOver = false;
-		restart = false;
+		die = false;
+		//restart = false;
 		//		restartText.text = "";
 		gameOverText.text = "";
 		restartButton.SetActive (false);
@@ -32,16 +46,18 @@ public class GameController : MonoBehaviour
 		StartCoroutine (SpawnWaves ());
 	}
 
-	//	void Update ()
-	//	{
-	//		if (restart)
-	//		{
-	//			if (Input.GetKeyDown (KeyCode.R))
-	//			{
-	//				Application.LoadLevel (Application.loadedLevel);
-	//			}
-	//		}
-	//	}
+	void Update ()
+	{
+		if (playerClone.Equals(null) && playerLives <= 0) 
+		{
+			GameOver ();
+		}
+
+		if (die)
+		{
+			die = false;
+		}
+	}
 
 	IEnumerator SpawnWaves ()
 	{
@@ -62,7 +78,7 @@ public class GameController : MonoBehaviour
 			{
 				restartButton.SetActive (true);
 				//				restartText.text = "Press 'R' for Restart";
-				restart = true;
+				//restart = true;
 				break;
 			}
 		}
@@ -79,6 +95,15 @@ public class GameController : MonoBehaviour
 		scoreText.text = "Score: " + score;
 	}
 
+	public void playerDie ()
+	{
+		if (playerLives >= 1) {
+			playerLives--;
+			livesText.text = "X " + playerLives;
+			playerClone = Instantiate (player, playerShip.position, Quaternion.identity) as GameObject;
+		}
+	}
+
 	public void GameOver ()
 	{
 		gameOverText.text = "Game Over!";
@@ -87,6 +112,7 @@ public class GameController : MonoBehaviour
 
 	public void RestartGame()
 	{
-		Application.LoadLevel (Application.loadedLevel);
+		SceneManager.LoadScene (1);
+		//Application.LoadLevel (Application.loadedLevel);
 	}
 }
