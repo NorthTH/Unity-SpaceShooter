@@ -16,6 +16,8 @@ public class Done_PlayerController : MonoBehaviour
 	public GameObject shot;
 	public Transform shotSpawn;
 	public float fireRate;
+	public AudioSource m_ShootingAudio;   
+
 	private SimpleTouchPad touchPad;
 	private SimpleTouchAreaButton areaButton;
 	 
@@ -35,7 +37,7 @@ public class Done_PlayerController : MonoBehaviour
 		{
 			nextFire = Time.time + fireRate;
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-			GetComponent<AudioSource>().Play ();
+			m_ShootingAudio.Play ();
 		}
 	}
 		

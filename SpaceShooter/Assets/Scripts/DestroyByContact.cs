@@ -6,6 +6,7 @@ public class DestroyByContact : MonoBehaviour
 	public GameObject exposion;
 	public GameObject playerExposion;
 	public int scoreValue;
+	public float damage;
 	private GameController gameController;
 
 	void Start()
@@ -36,13 +37,19 @@ public class DestroyByContact : MonoBehaviour
 		//if (other.tag == "Player") 
 		if (other.CompareTag ("Player"))
 		{
-			Instantiate (playerExposion, other.transform.position, other.transform.rotation);
-			gameController.playerDie ();
+			PlayerShield clonePlayer = other.gameObject.GetComponent<PlayerShield> ();
+			clonePlayer.TakeDamage (damage);
+
+			if (clonePlayer.getCurrentSheild () < 0) {
+				Instantiate (playerExposion, other.transform.position, other.transform.rotation);
+				Destroy (other.gameObject);
+				gameController.playerDie ();
+			}
 			//gameController.GameOver ();
 		}
 
 		gameController.AddScore (scoreValue);
-		Destroy (other.gameObject);
+		//Destroy (other.gameObject);
 		Destroy (gameObject);
 	}
 
