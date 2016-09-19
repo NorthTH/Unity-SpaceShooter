@@ -3,7 +3,6 @@
 -nowarn:0169
 -out:'Temp/Assembly-CSharp.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll'
--r:'Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll'
@@ -124,7 +123,6 @@
 'Assets/Scripts/SimpleTouchPad.cs'
 'Assets/Scripts/TouchScript.cs'
 'Assets/Scripts/WeaponController.cs'
-'Assets/SimpleParticlePack/Scripts/ParticleTester.cs'
 'Assets/Unity Sample UI/Scripts/ActiveStateToggler.cs'
 'Assets/Unity Sample UI/Scripts/ApplicationManager.cs'
 'Assets/Unity Sample UI/Scripts/ChangeColor.cs'

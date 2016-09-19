@@ -29,15 +29,12 @@ public class DestroyByContact : MonoBehaviour
 			return;
 		}
 
-		if (exposion != null) 
-		{
-			Instantiate (exposion, transform.position, transform.rotation);
-		}
-
 		//if (other.tag == "Player") 
 		if (other.CompareTag ("Player"))
 		{
 			PlayerShield clonePlayer = other.gameObject.GetComponent<PlayerShield> ();
+			if (clonePlayer.IsInvincible ())
+				return;
 			clonePlayer.TakeDamage (damage);
 
 			if (clonePlayer.getCurrentSheild () < 0) {
@@ -46,6 +43,11 @@ public class DestroyByContact : MonoBehaviour
 				gameController.playerDie ();
 			}
 			//gameController.GameOver ();
+		}
+			
+		if (exposion != null) 
+		{
+			Instantiate (exposion, transform.position, transform.rotation);
 		}
 
 		gameController.AddScore (scoreValue);
