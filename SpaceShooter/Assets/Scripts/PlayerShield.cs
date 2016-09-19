@@ -38,6 +38,9 @@ public class PlayerShield : MonoBehaviour {
 
 		CancelInvoke ("SetDamageable"); // in case the method has already been invoked
 		Invoke( "SetDamageable", invincibleTime );
+
+		CancelInvoke ("onEngineParticle"); // in case the method has already been invoked
+		Invoke( "onEngineParticle", invincibleTime );
 	}
 
 	void SetDamageable()
@@ -69,6 +72,10 @@ public class PlayerShield : MonoBehaviour {
 
 		//make sure renderer is enabled when we exit
 		rend.enabled = true;
+	}
+
+	void onEngineParticle()
+	{
 		foreach (ParticleSystem stuff in m_particle)
 		{
 			ParticleSystem.EmissionModule em = stuff.GetComponentInChildren<ParticleSystem>().emission;
