@@ -12,7 +12,7 @@ public class PlayerShield : MonoBehaviour {
 	public AudioSource m_EnergyShieldAudio;
 	public Renderer rend;
 	public GameObject engine;
-	public Renderer m_ForceSheild;
+	public GameObject m_ForceSheild;
 
 	private float m_CurrentSheild;
 	private Slider m_shieldBar;
@@ -22,6 +22,7 @@ public class PlayerShield : MonoBehaviour {
 	private void OnEnable()
 	{
 		m_shieldBar = GameObject.FindGameObjectWithTag ("ShieldBar").GetComponent<Slider> ();
+		m_ForceSheild.SetActive (false);
 		m_CurrentSheild = m_StartingSheild;
 
 		m_particle = engine.GetComponentsInChildren<ParticleSystem> ();
@@ -88,7 +89,7 @@ public class PlayerShield : MonoBehaviour {
 	{
 		if (!isInvincible) 
 		{
-			m_ForceSheild.enabled = true;
+			m_ForceSheild.SetActive (true);
 			m_CurrentSheild -= amount;
 			m_EnergyShieldAudio.Play ();
 			SetHealthUI ();
@@ -100,7 +101,7 @@ public class PlayerShield : MonoBehaviour {
 
 	void disShowSheild ()
 	{
-		m_ForceSheild.enabled = false;
+		m_ForceSheild.SetActive (false);
 	}
 
 	private void SetHealthUI ()
