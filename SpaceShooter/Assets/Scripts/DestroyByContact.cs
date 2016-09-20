@@ -50,6 +50,9 @@ public class DestroyByContact : MonoBehaviour
 			Instantiate (exposion, transform.position, transform.rotation);
 		}
 
+		if (other.CompareTag ("LaserShot"))
+			Destroy (other.gameObject);
+
 		gameController.AddScore (scoreValue);
 		//Destroy (other.gameObject);
 		Destroy (gameObject);

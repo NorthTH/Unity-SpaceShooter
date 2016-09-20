@@ -12,6 +12,7 @@ public class PlayerShield : MonoBehaviour {
 	public AudioSource m_EnergyShieldAudio;
 	public Renderer rend;
 	public GameObject engine;
+	public Renderer m_ForceSheild;
 
 	private float m_CurrentSheild;
 	private Slider m_shieldBar;
@@ -87,10 +88,19 @@ public class PlayerShield : MonoBehaviour {
 	{
 		if (!isInvincible) 
 		{
+			m_ForceSheild.enabled = true;
 			m_CurrentSheild -= amount;
 			m_EnergyShieldAudio.Play ();
 			SetHealthUI ();
+
+			CancelInvoke ("disShowSheild");
+			Invoke ("disShowSheild", 0.5f);
 		}
+	}
+
+	void disShowSheild ()
+	{
+		m_ForceSheild.enabled = false;
 	}
 
 	private void SetHealthUI ()
