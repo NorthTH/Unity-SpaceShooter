@@ -75,6 +75,9 @@ public class GameController : MonoBehaviour
 				Instantiate (enemy, spawnPosition, spawnRotation);
 				yield return new WaitForSeconds (spawnWait);
 			}
+			if (spawnWait > 1.0f) {
+				spawnWait -= 0.1f;
+			}
 			yield return new WaitForSeconds (waveWait);
 
 			if (gameOver)

@@ -14,7 +14,7 @@ public class Done_PlayerController : MonoBehaviour
 	public Done_Boundary boundary;
 
 	public GameObject shot;
-	public Transform shotSpawn;
+	public Transform[] shotSpawns;
 	public float fireRate;
 	public AudioSource m_ShootingAudio;   
 
@@ -36,7 +36,9 @@ public class Done_PlayerController : MonoBehaviour
 		if (areaButton.CanFire() && Time.time > nextFire) 
 		{
 			nextFire = Time.time + fireRate;
-			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+			foreach (var shotSpawn in shotSpawns) {
+				Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
+			}
 			m_ShootingAudio.Play ();
 		}
 	}

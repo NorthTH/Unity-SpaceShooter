@@ -6,6 +6,7 @@ public class WeaponController : MonoBehaviour {
 	public GameObject shot;
 	public Transform shotSpawn;
 	public float fireRate;
+	public float diversionRate;
 	public float delay;
 
 	private AudioSource audioSource;
@@ -13,7 +14,7 @@ public class WeaponController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audioSource = GetComponent<AudioSource> ();
-		InvokeRepeating ("Fire", delay, fireRate);
+		InvokeRepeating ("Fire", delay, Random.Range (fireRate - diversionRate, fireRate + diversionRate));
 	}
 
 	void Fire()
